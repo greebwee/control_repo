@@ -1,9 +1,9 @@
-class minecraft {
-  $url = 'https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar'
+class minecraft (
+  $url = 'https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar',
   $install_dir = '/opt/minecraft'
+){
   file {'/opt/minecraft':
     ensure => directory,
-  }
   file {"{$install_dir}/server.jar":
     ensure => file,
     source => $url,
